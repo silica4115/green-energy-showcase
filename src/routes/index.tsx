@@ -1,12 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ShieldCheck, Users, Wallet, Award, Sun, Leaf, Battery } from "lucide-react";
+import { ArrowRight, ShieldCheck, Users, Wallet, Award, Sun, Leaf, Zap, ClipboardCheck } from "lucide-react";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { ContactForm } from "@/components/site/ContactForm";
 import { COMPANY } from "@/lib/company";
 import heroImg from "@/assets/hero-solar.jpg";
-import caseRoof from "@/assets/case-rooftop.jpg";
-import caseLand from "@/assets/case-land.jpg";
+import aboutPanels from "@/assets/about-panels.jpg";
 import svcOm from "@/assets/service-om.jpg";
 import svcRe from "@/assets/service-re100.jpg";
 import svcRps from "@/assets/service-rps.jpg";
@@ -26,13 +25,10 @@ const SERVICES = [
   { img: svcRps, title: "태양광발전사업 (RPS)", subtitle: "신재생에너지 공급 의무화 제도", to: "/services/rps", icon: Sun },
 ];
 
-const CASES = [
-  { img: caseRoof, title: "삼양1 태양광 발전소", cat: "건물형" },
-  { img: caseRoof, title: "미래1호 태양광 발전소", cat: "건물형" },
-  { img: caseLand, title: "대동솔라팩 발전소", cat: "토지형" },
-  { img: caseLand, title: "평두메 태양광 발전소", cat: "토지형" },
-  { img: caseRoof, title: "한성정공 태양광 발전소", cat: "건물형" },
-  { img: caseLand, title: "신당동 태양광 발전소", cat: "토지형" },
+const ABOUT_FEATURES = [
+  { icon: Zap, title: "고효율 태양광 모듈", desc: "최신 고효율 모노크리스탈 태양전지를 사용하여 최대 발전 효율을 실현합니다." },
+  { icon: ShieldCheck, title: "체계적 사후관리", desc: "설치 완료 후에도 정기 점검 및 AS 서비스를 통해 안정적인 발전을 보장합니다." },
+  { icon: ClipboardCheck, title: "인허가 원스톱 대행", desc: "전기 사업 허가부터 한전 계통 연계, 각종 보조금 신청까지 모두 대행합니다." },
 ];
 
 function Index() {
@@ -76,48 +72,54 @@ function Index() {
         </div>
       </section>
 
-      {/* INTRO */}
+      {/* ABOUT / INTRO */}
       <section className="py-24 bg-background">
-        <div className="container mx-auto px-6 text-center max-w-3xl">
-          <span className="text-primary font-bold text-sm uppercase tracking-widest">About {COMPANY.name}</span>
-          <h2 className="mt-3 text-4xl md:text-5xl font-bold">
-            신재생에너지 전문기업<br />
-            환경 + 인간의 삶을 가치로 하는 기업
-          </h2>
-          <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-            그린에너지㈜는 태양광 발전소 설계·시공·운영 전 과정에서<br className="hidden md:block" />
-            검증된 기술력과 책임감으로 고객의 가치를 실현합니다.
-          </p>
-        </div>
-      </section>
-
-      {/* CASES */}
-      <section className="py-24 bg-secondary/40">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-wrap items-end justify-between mb-12 gap-4">
-            <div>
-              <span className="text-primary font-bold text-sm uppercase tracking-widest">Cases</span>
-              <h2 className="mt-2 text-4xl md:text-5xl font-bold">그린에너지의 시공사례</h2>
+        <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+          <div className="relative">
+            <div className="rounded-3xl overflow-hidden shadow-soft">
+              <img
+                src={aboutPanels}
+                alt="태양광 모듈 설치 전경"
+                loading="lazy"
+                width={1280}
+                height={1280}
+                className="w-full h-full object-cover aspect-square"
+              />
             </div>
-            <Link to="/cases" className="text-primary font-semibold flex items-center gap-1 hover:gap-2 transition-all">
-              더보기 <ArrowRight className="w-4 h-4" />
-            </Link>
+            <div
+              className="absolute -bottom-6 -right-2 md:right-6 px-8 py-6 rounded-2xl shadow-xl text-primary-foreground text-center"
+              style={{ background: "var(--gradient-primary)" }}
+            >
+              <div className="text-4xl md:text-5xl font-extrabold leading-none">20+</div>
+              <div className="mt-1 text-xs font-bold tracking-widest">YEARS EXPERIENCE</div>
+            </div>
           </div>
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-6">
-            {CASES.map((c, i) => (
-              <Link
-                key={i}
-                to="/cases"
-                className="group relative overflow-hidden rounded-2xl aspect-[4/5] shadow-card hover:shadow-soft transition-all"
-              >
-                <img src={c.img} alt={c.title} loading="lazy" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
-                  <span className="text-xs px-2 py-0.5 rounded bg-primary/90 font-semibold">{c.cat}</span>
-                  <h3 className="mt-2 text-lg font-bold">{c.title}</h3>
+
+          <div>
+            <span className="text-primary font-bold text-sm uppercase tracking-widest">회사 소개</span>
+            <h2 className="mt-3 text-4xl md:text-5xl font-bold leading-tight">
+              신뢰와 기술로<br />
+              만드는 에너지 미래
+            </h2>
+            <p className="mt-6 text-base md:text-lg text-muted-foreground leading-relaxed">
+              주식회사 그린에너지는 경기도 화성시를 중심으로 태양광 발전 사업의 모든 분야를 아우르는
+              종합 에너지 솔루션 기업입니다. 최신 기술과 풍부한 시공 경험을 바탕으로 고객 맞춤형
+              최적의 태양광 시스템을 제안합니다.
+            </p>
+
+            <div className="mt-8 space-y-5">
+              {ABOUT_FEATURES.map((f) => (
+                <div key={f.title} className="flex gap-4">
+                  <div className="shrink-0 w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                    <f.icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-foreground">{f.title}</h3>
+                    <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
+                  </div>
                 </div>
-              </Link>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>

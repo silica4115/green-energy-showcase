@@ -29,7 +29,7 @@ export function Footer() {
             </li>
             <li className="flex items-start gap-2">
               <Mail className="w-4 h-4 mt-0.5 text-primary-glow" />
-              <span>{COMPANY.email}</span>
+              <a href={`mailto:${COMPANY.email}`} className="hover:text-primary-glow underline-offset-2 hover:underline">{COMPANY.email}</a>
             </li>
             <li className="flex items-start gap-2">
               <MapPin className="w-4 h-4 mt-0.5 text-primary-glow" />
@@ -50,8 +50,11 @@ export function Footer() {
       </div>
       <div className="border-t border-background/10">
         <div className="container mx-auto px-6 py-5 text-xs text-background/50 flex flex-col md:flex-row md:justify-between gap-2">
-          <span>© {new Date().getFullYear()} {COMPANY.fullName}. All rights reserved.</span>
-          <span>{COMPANY.address}</span>
+          <span>© 2020 {COMPANY.fullName}. All rights reserved.</span>
+          <div className="flex gap-4">
+            <Link to="/privacy" className="hover:text-primary-glow">개인정보처리방침</Link>
+            <Link to="/terms" className="hover:text-primary-glow">이용약관</Link>
+          </div>
         </div>
       </div>
     </footer>
