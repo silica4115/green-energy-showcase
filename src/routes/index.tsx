@@ -5,7 +5,7 @@ import { Footer } from "@/components/site/Footer";
 import { ContactForm } from "@/components/site/ContactForm";
 import { COMPANY } from "@/lib/company";
 import heroImg from "@/assets/hero-solar.jpg";
-import aboutPanels from "@/assets/about-panels.jpg";
+import aboutPanels from "@/assets/about-panels-new.jpg";
 import prodModule from "@/assets/product-module.jpg";
 import prodInverter from "@/assets/product-inverter.jpg";
 import prodEss from "@/assets/product-ess.jpg";
