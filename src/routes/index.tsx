@@ -137,33 +137,85 @@ function Index() {
       </section>
 
       {/* SERVICES */}
-      <section className="py-24 bg-background">
+      <section id="services" className="py-24 bg-secondary/30">
         <div className="container mx-auto px-6">
           <div className="text-center mb-14">
-            <span className="text-primary font-bold text-sm uppercase tracking-widest">Service</span>
-            <h2 className="mt-2 text-4xl md:text-5xl font-bold">그린에너지의 주요사업</h2>
+            <span className="text-primary font-bold text-sm uppercase tracking-widest">사업분야</span>
+            <h2 className="mt-2 text-4xl md:text-5xl font-bold">다양한 환경에 최적화된<br />태양광 솔루션</h2>
+            <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">주택부터 대규모 산업단지까지, 규모와 환경에 맞는 맞춤 태양광 시스템을 설계·시공합니다.</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {SERVICES.map((s) => (
-              <Link key={s.title} to={s.to} className="group bg-card rounded-2xl overflow-hidden border border-border shadow-card hover:shadow-soft hover:-translate-y-1 transition-all">
-                <div className="relative h-56 overflow-hidden">
-                  <img src={s.img} alt={s.title} loading="lazy" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform" />
-                  <div className="absolute top-4 left-4 w-12 h-12 bg-primary rounded-xl flex items-center justify-center text-primary-foreground">
-                    <s.icon className="w-6 h-6" />
-                  </div>
+              <div key={s.title} className="group bg-card rounded-2xl p-8 border border-border shadow-card hover:shadow-soft hover:-translate-y-1 transition-all relative overflow-hidden">
+                <div className="absolute top-0 left-0 right-0 h-1 bg-primary scale-x-0 group-hover:scale-x-100 origin-left transition-transform" />
+                <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center text-primary-foreground mb-6">
+                  <s.icon className="w-7 h-7" />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition">{s.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.subtitle}</p>
-                  <div className="mt-4 text-sm font-semibold text-primary flex items-center gap-1 group-hover:gap-2 transition-all">
-                    자세히 보기 <ArrowRight className="w-4 h-4" />
-                  </div>
-                </div>
-              </Link>
+                <h3 className="text-xl font-bold text-foreground mb-3">{s.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-5">{s.desc}</p>
+                <ul className="space-y-2">
+                  {s.items.map((it) => (
+                    <li key={it} className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                      {it}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* PROCESS */}
+      <section className="py-24 bg-foreground text-background">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="text-primary-glow font-bold text-sm uppercase tracking-widest">설치 과정</span>
+            <h2 className="mt-2 text-4xl md:text-5xl font-bold">쉽고 간편한<br />5단계 설치 프로세스</h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 relative">
+            <div className="hidden lg:block absolute top-8 left-[10%] right-[10%] h-px bg-primary-glow/30" />
+            {PROCESS.map((p) => (
+              <div key={p.n} className="text-center relative">
+                <div className="w-16 h-16 mx-auto mb-5 rounded-full bg-foreground border-2 border-primary-glow flex items-center justify-center text-primary-glow font-bold text-xl relative z-10">
+                  {p.n}
+                </div>
+                <p.icon className="w-6 h-6 mx-auto mb-3 text-primary-glow/70" />
+                <h4 className="font-bold mb-2">{p.title}</h4>
+                <p className="text-xs text-background/60 leading-relaxed">{p.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PRODUCTS */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-6">
+          <div className="mb-14">
+            <span className="text-primary font-bold text-sm uppercase tracking-widest">주요 제품</span>
+            <h2 className="mt-2 text-4xl md:text-5xl font-bold">검증된 고품질<br />태양광 제품 라인업</h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            {PRODUCTS.map((p) => (
+              <div key={p.title} className="bg-card border border-border rounded-2xl overflow-hidden grid grid-cols-[140px_1fr] md:grid-cols-[200px_1fr] shadow-card hover:shadow-soft transition-all">
+                <img src={p.img} alt={p.title} loading="lazy" width={400} height={400} className="w-full h-full object-cover" />
+                <div className="p-6">
+                  <h3 className="font-bold text-foreground mb-2">{p.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">{p.desc}</p>
+                  <div className="flex gap-2 flex-wrap">
+                    {p.specs.map((s) => (
+                      <span key={s} className="bg-primary/10 text-primary text-xs font-semibold px-3 py-1 rounded-full">{s}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
 
       {/* FEATURES */}
       <section className="py-24 bg-foreground text-background relative overflow-hidden">
