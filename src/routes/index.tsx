@@ -141,14 +141,23 @@ function Index() {
             <h2 className="mt-2 text-4xl md:text-5xl font-bold">다양한 환경에 최적화된<br />태양광 솔루션</h2>
             <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">주택부터 대규모 산업단지까지, 규모와 환경에 맞는 맞춤 태양광 시스템을 설계·시공합니다.</p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {SERVICES.map((s) => (
-              <div key={s.title} className="group bg-card rounded-xl p-4 border border-border shadow-card hover:shadow-soft hover:-translate-y-1 transition-all relative overflow-hidden text-center">
-                <div className="absolute top-0 left-0 right-0 h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 origin-left transition-transform" />
-                <div className="w-10 h-10 mx-auto rounded-lg bg-primary flex items-center justify-center text-primary-foreground mb-3">
-                  <s.icon className="w-5 h-5" />
+              <div key={s.title} className="group bg-card rounded-2xl p-8 border border-border shadow-card hover:shadow-soft hover:-translate-y-1 transition-all relative overflow-hidden">
+                <div className="absolute top-0 left-0 right-0 h-1 bg-primary scale-x-0 group-hover:scale-x-100 origin-left transition-transform" />
+                <div className="w-14 h-14 rounded-xl bg-primary flex items-center justify-center text-primary-foreground mb-6">
+                  <s.icon className="w-7 h-7" />
                 </div>
-                <h3 className="text-sm font-bold text-foreground leading-tight">{s.title}</h3>
+                <h3 className="text-xl font-bold text-foreground mb-3">{s.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-5">{s.desc}</p>
+                <ul className="space-y-2">
+                  {s.items.map((it) => (
+                    <li key={it} className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                      {it}
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
