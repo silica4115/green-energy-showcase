@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ShieldCheck, Users, Wallet, Award, Sun, Leaf, Zap, ClipboardCheck } from "lucide-react";
+import { ArrowRight, ShieldCheck, Users, Wallet, Award, Sun, Leaf, Zap, ClipboardCheck, Home, Building2, Sprout, Wrench, BarChart3, Phone, Search, FileText, FileCheck, HardHat, CheckCircle2 } from "lucide-react";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { ContactForm } from "@/components/site/ContactForm";
@@ -9,6 +9,11 @@ import aboutPanels from "@/assets/about-panels.jpg";
 import svcOm from "@/assets/service-om.jpg";
 import svcRe from "@/assets/service-re100.jpg";
 import svcRps from "@/assets/service-rps.jpg";
+import prodModule from "@/assets/product-module.jpg";
+import prodInverter from "@/assets/product-inverter.jpg";
+import prodEss from "@/assets/product-ess.jpg";
+import prodStructure from "@/assets/product-structure.jpg";
+
 
 export const Route = createFileRoute("/")({ component: Index });
 
