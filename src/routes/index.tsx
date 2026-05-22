@@ -82,17 +82,6 @@ function Index() {
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 bg-primary/95 backdrop-blur text-primary-foreground">
-          <div className="container mx-auto px-6 py-5 flex flex-wrap items-center justify-between gap-4">
-            <div className="text-sm">
-              <div className="opacity-80">평일 · 공휴일 · 24시간 상담</div>
-              <a href={`tel:${COMPANY.phone}`} className="text-2xl font-bold tracking-wider">{COMPANY.phoneDisplay}</a>
-            </div>
-            <Link to="/contact" className="px-6 py-3 bg-white text-primary rounded-full font-bold text-sm hover:scale-105 transition">
-              무료상담 신청하기 →
-            </Link>
-          </div>
-        </div>
       </section>
 
       {/* ABOUT / INTRO */}
