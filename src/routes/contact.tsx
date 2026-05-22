@@ -51,11 +51,6 @@ function ContactPage() {
               </li>
             </ul>
           </div>
-          <div className="rounded-2xl p-6 text-primary-foreground shadow-soft" style={{ background: "var(--gradient-primary)" }}>
-            <div className="text-sm opacity-90">24시간 상담 가능</div>
-            <a href={`tel:${COMPANY.phone}`} className="block text-3xl font-bold mt-1">{COMPANY.phoneDisplay}</a>
-            <p className="text-sm mt-3 opacity-90">전화로도 빠른 상담이 가능합니다.</p>
-          </div>
         </aside>
         <div className="lg:col-span-3 bg-card border border-border rounded-2xl p-8 shadow-card">
           <h2 className="text-2xl font-bold mb-2">상담 신청</h2>

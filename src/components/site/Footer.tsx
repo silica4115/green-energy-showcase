@@ -49,7 +49,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-background/10">
-        <div className="container mx-auto px-6 py-5 text-xs text-background/50 flex flex-col md:flex-row md:justify-between gap-2">
+        <div className="container mx-auto px-6 py-5 text-xs text-background/50 flex flex-col items-center gap-3">
           <span>© 2020 {COMPANY.fullName}. All rights reserved.</span>
           <div className="flex gap-4">
             <Link to="/privacy" className="hover:text-primary-glow">개인정보처리방침</Link>

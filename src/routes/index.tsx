@@ -264,10 +264,13 @@ function Index() {
               </div>
             </div>
           </div>
-          <div className="bg-card p-8 rounded-2xl shadow-soft border border-border">
-            <h3 className="text-2xl font-bold mb-1">무료 상담 신청</h3>
-            <p className="text-sm text-muted-foreground mb-6">간단한 정보를 남겨주시면 빠르게 연락드립니다.</p>
-            <ContactForm />
+          <div className="relative p-8 rounded-2xl shadow-soft border-2 border-primary/40 overflow-hidden">
+            <img src={heroImg} alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.07]" />
+            <div className="relative z-10">
+              <h3 className="text-2xl font-bold mb-1">무료 상담 신청</h3>
+              <p className="text-sm text-muted-foreground mb-6">간단한 정보를 남겨주시면 빠르게 연락드립니다.</p>
+              <ContactForm />
+            </div>
           </div>
         </div>
       </section>

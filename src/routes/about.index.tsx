@@ -23,7 +23,7 @@ function Greeting() {
           오랜 시간 축적한 기술력과 책임감으로 RPS, RE100, 정부지원사업 등 다양한 분야에서 최고 수준의 서비스를 제공하고 있으며,
           앞으로도 끊임없는 혁신과 노력을 통해 고객 여러분의 신뢰에 보답하겠습니다.
         </p>
-        <p className="font-semibold pt-4">{COMPANY.fullName} 대표이사 드림</p>
+        <p className="font-semibold pt-4">{COMPANY.fullName} 대표이사 최은성 드림</p>
       </div>
     </article>
   );
