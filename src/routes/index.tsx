@@ -25,13 +25,10 @@ const SERVICES = [
   { img: svcRps, title: "태양광발전사업 (RPS)", subtitle: "신재생에너지 공급 의무화 제도", to: "/services/rps", icon: Sun },
 ];
 
-const CASES = [
-  { img: caseRoof, title: "삼양1 태양광 발전소", cat: "건물형" },
-  { img: caseRoof, title: "미래1호 태양광 발전소", cat: "건물형" },
-  { img: caseLand, title: "대동솔라팩 발전소", cat: "토지형" },
-  { img: caseLand, title: "평두메 태양광 발전소", cat: "토지형" },
-  { img: caseRoof, title: "한성정공 태양광 발전소", cat: "건물형" },
-  { img: caseLand, title: "신당동 태양광 발전소", cat: "토지형" },
+const ABOUT_FEATURES = [
+  { icon: Zap, title: "고효율 태양광 모듈", desc: "최신 고효율 모노크리스탈 태양전지를 사용하여 최대 발전 효율을 실현합니다." },
+  { icon: ShieldCheck, title: "체계적 사후관리", desc: "설치 완료 후에도 정기 점검 및 AS 서비스를 통해 안정적인 발전을 보장합니다." },
+  { icon: ClipboardCheck, title: "인허가 원스톱 대행", desc: "전기 사업 허가부터 한전 계통 연계, 각종 보조금 신청까지 모두 대행합니다." },
 ];
 
 function Index() {
