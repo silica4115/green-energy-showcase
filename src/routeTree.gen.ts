@@ -9,38 +9,240 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ServicesRouteImport } from './routes/services'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CasesRouteImport } from './routes/cases'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutIndexRouteImport } from './routes/about.index'
+import { Route as ServicesRpsRouteImport } from './routes/services.rps'
+import { Route as ServicesReviewRouteImport } from './routes/services.review'
+import { Route as ServicesRe100RouteImport } from './routes/services.re100'
+import { Route as ServicesOmRouteImport } from './routes/services.om'
+import { Route as ServicesModuleRouteImport } from './routes/services.module'
+import { Route as ServicesGovRouteImport } from './routes/services.gov'
+import { Route as AboutLocationRouteImport } from './routes/about.location'
+import { Route as AboutHistoryRouteImport } from './routes/about.history'
+import { Route as AboutBusinessRouteImport } from './routes/about.business'
 
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CasesRoute = CasesRouteImport.update({
+  id: '/cases',
+  path: '/cases',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutIndexRoute = AboutIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AboutRoute,
+} as any)
+const ServicesRpsRoute = ServicesRpsRouteImport.update({
+  id: '/rps',
+  path: '/rps',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesReviewRoute = ServicesReviewRouteImport.update({
+  id: '/review',
+  path: '/review',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesRe100Route = ServicesRe100RouteImport.update({
+  id: '/re100',
+  path: '/re100',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesOmRoute = ServicesOmRouteImport.update({
+  id: '/om',
+  path: '/om',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesModuleRoute = ServicesModuleRouteImport.update({
+  id: '/module',
+  path: '/module',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesGovRoute = ServicesGovRouteImport.update({
+  id: '/gov',
+  path: '/gov',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const AboutLocationRoute = AboutLocationRouteImport.update({
+  id: '/location',
+  path: '/location',
+  getParentRoute: () => AboutRoute,
+} as any)
+const AboutHistoryRoute = AboutHistoryRouteImport.update({
+  id: '/history',
+  path: '/history',
+  getParentRoute: () => AboutRoute,
+} as any)
+const AboutBusinessRoute = AboutBusinessRouteImport.update({
+  id: '/business',
+  path: '/business',
+  getParentRoute: () => AboutRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRouteWithChildren
+  '/cases': typeof CasesRoute
+  '/contact': typeof ContactRoute
+  '/services': typeof ServicesRouteWithChildren
+  '/about/business': typeof AboutBusinessRoute
+  '/about/history': typeof AboutHistoryRoute
+  '/about/location': typeof AboutLocationRoute
+  '/services/gov': typeof ServicesGovRoute
+  '/services/module': typeof ServicesModuleRoute
+  '/services/om': typeof ServicesOmRoute
+  '/services/re100': typeof ServicesRe100Route
+  '/services/review': typeof ServicesReviewRoute
+  '/services/rps': typeof ServicesRpsRoute
+  '/about/': typeof AboutIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/cases': typeof CasesRoute
+  '/contact': typeof ContactRoute
+  '/services': typeof ServicesRouteWithChildren
+  '/about/business': typeof AboutBusinessRoute
+  '/about/history': typeof AboutHistoryRoute
+  '/about/location': typeof AboutLocationRoute
+  '/services/gov': typeof ServicesGovRoute
+  '/services/module': typeof ServicesModuleRoute
+  '/services/om': typeof ServicesOmRoute
+  '/services/re100': typeof ServicesRe100Route
+  '/services/review': typeof ServicesReviewRoute
+  '/services/rps': typeof ServicesRpsRoute
+  '/about': typeof AboutIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRouteWithChildren
+  '/cases': typeof CasesRoute
+  '/contact': typeof ContactRoute
+  '/services': typeof ServicesRouteWithChildren
+  '/about/business': typeof AboutBusinessRoute
+  '/about/history': typeof AboutHistoryRoute
+  '/about/location': typeof AboutLocationRoute
+  '/services/gov': typeof ServicesGovRoute
+  '/services/module': typeof ServicesModuleRoute
+  '/services/om': typeof ServicesOmRoute
+  '/services/re100': typeof ServicesRe100Route
+  '/services/review': typeof ServicesReviewRoute
+  '/services/rps': typeof ServicesRpsRoute
+  '/about/': typeof AboutIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/cases'
+    | '/contact'
+    | '/services'
+    | '/about/business'
+    | '/about/history'
+    | '/about/location'
+    | '/services/gov'
+    | '/services/module'
+    | '/services/om'
+    | '/services/re100'
+    | '/services/review'
+    | '/services/rps'
+    | '/about/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/cases'
+    | '/contact'
+    | '/services'
+    | '/about/business'
+    | '/about/history'
+    | '/about/location'
+    | '/services/gov'
+    | '/services/module'
+    | '/services/om'
+    | '/services/re100'
+    | '/services/review'
+    | '/services/rps'
+    | '/about'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/cases'
+    | '/contact'
+    | '/services'
+    | '/about/business'
+    | '/about/history'
+    | '/about/location'
+    | '/services/gov'
+    | '/services/module'
+    | '/services/om'
+    | '/services/re100'
+    | '/services/review'
+    | '/services/rps'
+    | '/about/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRouteWithChildren
+  CasesRoute: typeof CasesRoute
+  ContactRoute: typeof ContactRoute
+  ServicesRoute: typeof ServicesRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cases': {
+      id: '/cases'
+      path: '/cases'
+      fullPath: '/cases'
+      preLoaderRoute: typeof CasesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,12 +250,134 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about/': {
+      id: '/about/'
+      path: '/'
+      fullPath: '/about/'
+      preLoaderRoute: typeof AboutIndexRouteImport
+      parentRoute: typeof AboutRoute
+    }
+    '/services/rps': {
+      id: '/services/rps'
+      path: '/rps'
+      fullPath: '/services/rps'
+      preLoaderRoute: typeof ServicesRpsRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/review': {
+      id: '/services/review'
+      path: '/review'
+      fullPath: '/services/review'
+      preLoaderRoute: typeof ServicesReviewRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/re100': {
+      id: '/services/re100'
+      path: '/re100'
+      fullPath: '/services/re100'
+      preLoaderRoute: typeof ServicesRe100RouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/om': {
+      id: '/services/om'
+      path: '/om'
+      fullPath: '/services/om'
+      preLoaderRoute: typeof ServicesOmRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/module': {
+      id: '/services/module'
+      path: '/module'
+      fullPath: '/services/module'
+      preLoaderRoute: typeof ServicesModuleRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/gov': {
+      id: '/services/gov'
+      path: '/gov'
+      fullPath: '/services/gov'
+      preLoaderRoute: typeof ServicesGovRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/about/location': {
+      id: '/about/location'
+      path: '/location'
+      fullPath: '/about/location'
+      preLoaderRoute: typeof AboutLocationRouteImport
+      parentRoute: typeof AboutRoute
+    }
+    '/about/history': {
+      id: '/about/history'
+      path: '/history'
+      fullPath: '/about/history'
+      preLoaderRoute: typeof AboutHistoryRouteImport
+      parentRoute: typeof AboutRoute
+    }
+    '/about/business': {
+      id: '/about/business'
+      path: '/business'
+      fullPath: '/about/business'
+      preLoaderRoute: typeof AboutBusinessRouteImport
+      parentRoute: typeof AboutRoute
+    }
   }
 }
 
+interface AboutRouteChildren {
+  AboutBusinessRoute: typeof AboutBusinessRoute
+  AboutHistoryRoute: typeof AboutHistoryRoute
+  AboutLocationRoute: typeof AboutLocationRoute
+  AboutIndexRoute: typeof AboutIndexRoute
+}
+
+const AboutRouteChildren: AboutRouteChildren = {
+  AboutBusinessRoute: AboutBusinessRoute,
+  AboutHistoryRoute: AboutHistoryRoute,
+  AboutLocationRoute: AboutLocationRoute,
+  AboutIndexRoute: AboutIndexRoute,
+}
+
+const AboutRouteWithChildren = AboutRoute._addFileChildren(AboutRouteChildren)
+
+interface ServicesRouteChildren {
+  ServicesGovRoute: typeof ServicesGovRoute
+  ServicesModuleRoute: typeof ServicesModuleRoute
+  ServicesOmRoute: typeof ServicesOmRoute
+  ServicesRe100Route: typeof ServicesRe100Route
+  ServicesReviewRoute: typeof ServicesReviewRoute
+  ServicesRpsRoute: typeof ServicesRpsRoute
+}
+
+const ServicesRouteChildren: ServicesRouteChildren = {
+  ServicesGovRoute: ServicesGovRoute,
+  ServicesModuleRoute: ServicesModuleRoute,
+  ServicesOmRoute: ServicesOmRoute,
+  ServicesRe100Route: ServicesRe100Route,
+  ServicesReviewRoute: ServicesReviewRoute,
+  ServicesRpsRoute: ServicesRpsRoute,
+}
+
+const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
+  ServicesRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRouteWithChildren,
+  CasesRoute: CasesRoute,
+  ContactRoute: ContactRoute,
+  ServicesRoute: ServicesRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
