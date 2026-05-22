@@ -94,14 +94,8 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden lg:flex items-center gap-3">
-          <a
-            href={`tel:${COMPANY.phone}`}
-            className="px-5 py-2.5 rounded-full bg-primary text-primary-foreground font-bold text-sm shadow-md hover:shadow-lg transition-all hover:scale-105"
-          >
-            {COMPANY.phoneDisplay}
-          </a>
-        </div>
+        <div className="hidden lg:flex items-center gap-3" />
+
 
         <button
           onClick={() => setOpen(!open)}
