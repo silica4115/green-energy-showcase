@@ -243,12 +243,8 @@ function Index() {
         <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-start">
           <div>
             <span className="text-primary font-bold text-sm uppercase tracking-widest">Contact</span>
-            <h2 className="mt-2 text-4xl md:text-5xl font-bold">태양광 견적 문의</h2>
-            <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
-              궁금한 사항은 전화나 온라인으로 문의해 주시면<br />
-              친절히 안내해드리겠습니다.
-            </p>
-            <div className="mt-8 space-y-5">
+          <h2 className="mt-2 text-4xl md:text-5xl font-bold">태양광 견적 문의</h2>
+          <div className="mt-8 space-y-5">
               <a href={`tel:${COMPANY.phone}`} className="block text-4xl md:text-5xl font-bold text-primary hover:opacity-80 transition">
                 {COMPANY.phoneDisplay}
               </a>
