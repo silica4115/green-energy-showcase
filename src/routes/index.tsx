@@ -1,12 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ShieldCheck, Users, Wallet, Award, Sun, Leaf, Battery } from "lucide-react";
+import { ArrowRight, ShieldCheck, Users, Wallet, Award, Sun, Leaf, Zap, ClipboardCheck } from "lucide-react";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { ContactForm } from "@/components/site/ContactForm";
 import { COMPANY } from "@/lib/company";
 import heroImg from "@/assets/hero-solar.jpg";
-import caseRoof from "@/assets/case-rooftop.jpg";
-import caseLand from "@/assets/case-land.jpg";
+import aboutPanels from "@/assets/about-panels.jpg";
 import svcOm from "@/assets/service-om.jpg";
 import svcRe from "@/assets/service-re100.jpg";
 import svcRps from "@/assets/service-rps.jpg";
